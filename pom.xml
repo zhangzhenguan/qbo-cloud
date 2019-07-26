@@ -33,7 +33,7 @@
         <module>qbo-gateway</module>
         <module>qbo-common</module>
         <module>qbo-auth</module>
-        <module>qbo-sidecar</module>
+        <!--<module>qbo-sidecar</module>-->
         <module>qbo-control</module>
         <module>qbo-modules</module>
     </modules>
@@ -86,7 +86,7 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>1.2.33</version>
+                <version>1.2.31</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -141,19 +141,6 @@
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>2.8.2</version>
             </plugin>
-            <!--<plugin>-->
-            <!--<groupId>org.apache.maven.plugins</groupId>-->
-            <!--<artifactId>maven-javadoc-plugin</artifactId>-->
-            <!--<version>2.10.3</version>-->
-            <!--<executions>-->
-            <!--<execution>-->
-            <!--<id>attach-javadocs</id>-->
-            <!--<goals>-->
-            <!--<goal>jar</goal>-->
-            <!--</goals>-->
-            <!--</execution>-->
-            <!--</executions>-->
-            <!--</plugin>-->
         </plugins>
     </build>
 </project>

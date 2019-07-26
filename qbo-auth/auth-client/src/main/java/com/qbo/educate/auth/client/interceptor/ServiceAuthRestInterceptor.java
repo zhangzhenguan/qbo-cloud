@@ -18,7 +18,6 @@ import java.util.List;
 /**
  * Created by ace on 2017/9/12.
  */
-@SuppressWarnings("ALL")
 public class ServiceAuthRestInterceptor extends HandlerInterceptorAdapter {
     private Logger logger = LoggerFactory.getLogger(ServiceAuthRestInterceptor.class);
 

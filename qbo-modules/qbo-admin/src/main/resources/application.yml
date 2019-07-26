@@ -1,7 +1,7 @@
 logging:
     level:
 #        tk.mybatis: DEBUG
-        com.github.wxiaoqi.security.admin: DEBUG
+        com.qbo.educate.admin: DEBUG
 spring:
     application:
         name: qbo-admin

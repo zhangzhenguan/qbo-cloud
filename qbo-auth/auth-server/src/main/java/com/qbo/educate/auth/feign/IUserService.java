@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * ${DESCRIPTION}
  *
- * @author wanghaobin
- * @create 2017-06-21 8:11
+ * @author zzg
+ * @create 2019-07-26 09:11
  */
 @FeignClient(value = "qbo-admin",configuration = FeignConfiguration.class)
 public interface IUserService {

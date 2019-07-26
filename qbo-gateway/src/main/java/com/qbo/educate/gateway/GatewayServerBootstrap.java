@@ -9,14 +9,13 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
- * @author ace
- * @create 2018/3/12.
+ * @author zzg
+ * @create 2019/07/12.
  */
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableAceAuthClient
 @EnableFeignClients({"com.qbo.educate.auth.client.feign","com.qbo.educate.gateway.feign"})
-@ComponentScan("com.qbo.educate.auth")
 public class GatewayServerBootstrap {
     public static void main(String[] args) {
         DBLog.getInstance().start();

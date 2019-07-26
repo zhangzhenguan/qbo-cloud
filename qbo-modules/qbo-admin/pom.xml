@@ -131,7 +131,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.33</version>
+            <version>1.2.31</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -171,6 +171,7 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
     </dependencies>
+
     <build>
         <finalName>qbo-admin</finalName>
         <plugins>
