@@ -27,6 +27,7 @@ public class UserBiz extends BaseBiz<UserMapper,User> {
     private MenuMapper menuMapper;
     @Autowired
     private UserAuthUtil userAuthUtil;
+
     @Override
     public void insertSelective(User entity) {
         String password = new BCryptPasswordEncoder(UserConstant.PW_ENCORDER_SALT).encode(entity.getPassword());

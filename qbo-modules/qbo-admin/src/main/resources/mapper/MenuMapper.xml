@@ -21,36 +21,30 @@
         <result column="upd_user" jdbcType="VARCHAR" property="updUser"/>
         <result column="upd_name" jdbcType="VARCHAR" property="updName"/>
         <result column="upd_host" jdbcType="VARCHAR" property="updHost"/>
-        <result column="attr1" jdbcType="VARCHAR" property="attr1"/>
-        <result column="attr2" jdbcType="VARCHAR" property="attr2"/>
-        <result column="attr3" jdbcType="VARCHAR" property="attr3"/>
-        <result column="attr4" jdbcType="VARCHAR" property="attr4"/>
-        <result column="attr5" jdbcType="VARCHAR" property="attr5"/>
-        <result column="attr6" jdbcType="VARCHAR" property="attr6"/>
-        <result column="attr7" jdbcType="VARCHAR" property="attr7"/>
-        <result column="attr8" jdbcType="VARCHAR" property="attr8"/>
-        <result column="path" jdbcType="VARCHAR" property="path"/>
     </resultMap>
+
     <select id="selectMenuByAuthorityId" resultMap="BaseResultMap">
-    select t.* from base_resource_authority ra
-    inner join base_menu t
-    on ra.resource_id = t.id
-    and ra.authority_id = #{authorityId}
-    and ra.authority_type = #{authorityType}
-    and ra.resource_type = 'menu'
-  </select>
+        select t.* from base_resource_authority ra
+        inner join base_menu t
+        on ra.resource_id = t.id
+        and ra.authority_id = #{authorityId}
+        and ra.authority_type = #{authorityType}
+        and ra.resource_type = 'menu'
+    </select>
+
     <select id="selectAuthorityMenuByUserId" resultMap="BaseResultMap">
-     select distinct t.* from base_resource_authority ra
-    inner join base_menu t
-    on ra.resource_id = t.id
-    and ra.authority_id in (
-      select group_id from base_group_member where user_id = #{userId}
-      union select group_id from base_group_leader where user_id = #{userId}
-    )
-    and ra.authority_type = 'group'
-    and ra.resource_type = 'menu'
-    order by t.id
-  </select>
+        select distinct t.* from base_resource_authority ra
+        inner join base_menu t
+        on ra.resource_id = t.id
+        and ra.authority_id in (
+          select group_id from base_group_member where user_id = #{userId}
+          union select group_id from base_group_leader where user_id = #{userId}
+        )
+        and ra.authority_type = 'group'
+        and ra.resource_type = 'menu'
+        order by t.id
+    </select>
+
     <select id="selectAuthoritySystemByUserId" resultMap="BaseResultMap">
         select distinct t.* from base_resource_authority ra
         inner join base_menu t
@@ -63,4 +57,5 @@
         and ra.resource_type = 'menu'
         where t.parent_id = -1
     </select>
+
 </mapper>

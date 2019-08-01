@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>qbo-admin</artifactId>
+
     <properties>
         <hystrix.version>1.5.12</hystrix.version>
         <!-- MyBatis Generator -->
@@ -29,6 +30,7 @@
         <mybatis.spring.version>1.2.4</mybatis.spring.version>
         <pagehelper.version>4.1.1</pagehelper.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.qbo.educate</groupId>
@@ -169,6 +171,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!--百度ID生成器-->
+        <dependency>
+            <groupId>com.github.wujun234</groupId>
+            <artifactId>uid-generator-spring-boot-starter</artifactId>
+            <version>1.0.2.RELEASE</version>
         </dependency>
     </dependencies>
 

@@ -29,6 +29,14 @@ public class ElementController extends BaseController<ElementBiz, Element> {
   @Autowired
   private UserBiz userBiz;
 
+  /**
+   * 分页获取列表数据
+   * @param limit--条数
+   * @param offset--页码
+   * @param name----名称
+   * @param menuId---ID
+   * @return
+   */
   @RequestMapping(value = "/list", method = RequestMethod.GET)
   @ResponseBody
   public TableResultResponse<Element> page(@RequestParam(defaultValue = "10") int limit,
@@ -46,7 +54,7 @@ public class ElementController extends BaseController<ElementBiz, Element> {
   @RequestMapping(value = "/user", method = RequestMethod.GET)
   @ResponseBody
   public ObjectRestResponse<Element> getAuthorityElement(String menuId) {
-    int userId = userBiz.getUserByUsername(getCurrentUserName()).getId();
+    int userId = userBiz.getUserByUsername(getCurrentUsername()).getId();
     List<Element> elements = baseBiz.getAuthorityElementByUserId(userId + "",menuId);
     return new ObjectRestResponse<List<Element>>().data(elements);
   }
@@ -54,7 +62,7 @@ public class ElementController extends BaseController<ElementBiz, Element> {
   @RequestMapping(value = "/user/menu", method = RequestMethod.GET)
   @ResponseBody
   public ObjectRestResponse<Element> getAuthorityElement() {
-    int userId = userBiz.getUserByUsername(getCurrentUserName()).getId();
+    int userId = userBiz.getUserByUsername(getCurrentUsername()).getId();
     List<Element> elements = baseBiz.getAuthorityElementByUserId(userId + "");
     return new ObjectRestResponse<List<Element>>().data(elements);
   }

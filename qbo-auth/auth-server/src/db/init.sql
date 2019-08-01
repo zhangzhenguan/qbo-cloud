@@ -1,91 +1,77 @@
 
-CREATE DATABASE ag_auth_v1 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-Use ag_auth_v1;
+CREATE DATABASE qbo_auth_v1 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+Use qbo_auth_v1;
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost
+ Source Server         : 本机
  Source Server Type    : MySQL
- Source Server Version : 50718
- Source Host           : localhost
- Source Database       : ag_auth_v1
+ Source Server Version : 50725
+ Source Host           : localhost:3306
+ Source Schema         : qbo_auth_v1
 
  Target Server Type    : MySQL
- Target Server Version : 50718
- File Encoding         : utf-8
+ Target Server Version : 50725
+ File Encoding         : 65001
 
- Date: 02/05/2019 21:40:34 PM
+ Date: 01/08/2019 14:16:59
 */
 
-SET NAMES utf8;
+SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
---  Table structure for `auth_client`
+-- Table structure for auth_client
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_client`;
-CREATE TABLE `auth_client` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(255) DEFAULT NULL COMMENT '服务编码',
-  `secret` varchar(255) DEFAULT NULL COMMENT '服务密钥',
-  `name` varchar(255) DEFAULT NULL COMMENT '服务名',
-  `locked` char(1) DEFAULT NULL COMMENT '是否锁定',
-  `description` varchar(255) DEFAULT NULL COMMENT '描述',
-  `crt_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `crt_user` varchar(255) DEFAULT NULL COMMENT '创建人',
-  `crt_name` varchar(255) DEFAULT NULL COMMENT '创建人姓名',
-  `crt_host` varchar(255) DEFAULT NULL COMMENT '创建主机',
-  `upd_time` datetime DEFAULT NULL COMMENT '更新时间',
-  `upd_user` varchar(255) DEFAULT NULL COMMENT '更新人',
-  `upd_name` varchar(255) DEFAULT NULL COMMENT '更新姓名',
-  `upd_host` varchar(255) DEFAULT NULL COMMENT '更新主机',
-  `attr1` varchar(255) DEFAULT NULL,
-  `attr2` varchar(255) DEFAULT NULL,
-  `attr3` varchar(255) DEFAULT NULL,
-  `attr4` varchar(255) DEFAULT NULL,
-  `attr5` varchar(255) DEFAULT NULL,
-  `attr6` varchar(255) DEFAULT NULL,
-  `attr7` varchar(255) DEFAULT NULL,
-  `attr8` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `auth_client`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '服务编码',
+  `secret` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '服务密钥',
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '服务名',
+  `locked` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '是否锁定',
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '描述',
+  `crt_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  `crt_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人',
+  `crt_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人姓名',
+  `crt_host` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建主机',
+  `upd_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `upd_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '更新人',
+  `upd_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '更新姓名',
+  `upd_host` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '更新主机',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
---  Records of `auth_client`
+-- Records of auth_client
 -- ----------------------------
-BEGIN;
-INSERT INTO `auth_client` VALUES ('1', 'ace-gate', '123456', 'ace-gate', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null), ('3', 'qbo-admin', '123456', 'qbo-admin', '0', '', null, null, null, null, '2017-07-06 21:42:17', '1', '管理员', '0:0:0:0:0:0:0:1', null, null, null, null, null, null, null, null), ('6', 'ace-auth', '123456', 'ace-auth', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null), ('11', 'ace-config', 'fXHsssa2', 'ace-config', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null), ('13', 'ace-template', 'bZf8yvj8', 'ace-template', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null), ('14', 'ace-trace', 'wKTl6GGE', 'ace-trace', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null), ('15', 'ace-monitor', 'eEQBUcnW', 'ace-monitor', '0', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-COMMIT;
+INSERT INTO `auth_client` VALUES (1, 'qbo-gateway', '123456', 'qbo-gateway', '0', '网关服务', '2019-07-26 14:45:37', '1', 'admin', '192.168.21.15', '2019-08-01 11:48:48', '1', 'admin', '192.168.21.15');
+INSERT INTO `auth_client` VALUES (2, 'qbo-admin', '123456', 'qbo-admin', '0', '后台管理', '2019-07-26 14:45:37', '1', 'admin', '192.168.21.15', '2019-08-01 11:48:55', '1', 'admin', '192.168.21.15');
+INSERT INTO `auth_client` VALUES (3, 'qbo-auth', '123456', 'qbo-auth', '0', '认证服务', '2019-07-26 14:45:37', '1', 'admin', '192.168.21.15', '2019-08-01 11:48:59', '1', 'admin', '192.168.21.15');
+INSERT INTO `auth_client` VALUES (4, 'qbo-monitor', '123456', 'qbo-monitor', '0', '监控服务', '2019-07-26 14:45:37', '1', 'admin', '192.168.21.15', '2019-08-01 11:49:01', '1', 'admin', '192.168.21.15');
 
 -- ----------------------------
---  Table structure for `auth_client_service`
+-- Table structure for auth_client_service
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_client_service`;
-CREATE TABLE `auth_client_service` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `service_id` varchar(255) DEFAULT NULL,
-  `client_id` varchar(255) DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL,
-  `crt_time` datetime DEFAULT NULL,
-  `crt_user` varchar(255) DEFAULT NULL,
-  `crt_name` varchar(255) DEFAULT NULL,
-  `crt_host` varchar(255) DEFAULT NULL,
-  `attr1` varchar(255) DEFAULT NULL,
-  `attr2` varchar(255) DEFAULT NULL,
-  `attr3` varchar(255) DEFAULT NULL,
-  `attr4` varchar(255) DEFAULT NULL,
-  `attr5` varchar(255) DEFAULT NULL,
-  `attr6` varchar(255) DEFAULT NULL,
-  `attr7` varchar(255) DEFAULT NULL,
-  `attr8` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `auth_client_service`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `service_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `client_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `crt_time` datetime(0) NULL DEFAULT NULL,
+  `crt_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `crt_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `crt_host` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
---  Records of `auth_client_service`
+-- Records of auth_client_service
 -- ----------------------------
-BEGIN;
-INSERT INTO `auth_client_service` VALUES ('21', '4', '5', null, null, null, null, null, null, null, null, null, null, null, null, null), ('23', '3', '6', null, null, null, null, null, null, null, null, null, null, null, null, null), ('41', '3', '1', null, '2017-12-31 08:58:03', 'null', 'null', 'null', null, null, null, null, null, null, null, null), ('42', '6', '1', null, '2017-12-31 08:58:03', 'null', 'null', 'null', null, null, null, null, null, null, null, null);
-COMMIT;
+INSERT INTO `auth_client_service` VALUES (2, '2', '3', NULL, '2019-08-01 11:49:36', '1', 'admin', '192.168.21.15');
+INSERT INTO `auth_client_service` VALUES (4, '2', '1', NULL, '2019-08-01 11:49:36', '1', 'admin', '192.168.21.15');
+INSERT INTO `auth_client_service` VALUES (5, '3', '1', NULL, '2019-08-01 11:49:36', '1', 'admin', '192.168.21.15');
+INSERT INTO `auth_client_service` VALUES (6, '4', '1', NULL, '2019-08-01 11:49:36', '1', 'admin', '192.168.21.15');
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -67,7 +67,8 @@ public class BaseController<Biz extends BaseBiz,Entity> {
         Query query = new Query(params);
         return baseBiz.selectByQuery(query);
     }
-    public String getCurrentUserName(){
+
+    public String getCurrentUsername(){
         return BaseContextHandler.getUsername();
     }
 }

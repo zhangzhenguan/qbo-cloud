@@ -53,7 +53,7 @@
 
     </dependencies>
     <build>
-        <finalName>ace-monitor</finalName>
+        <finalName>qbo-monitor</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

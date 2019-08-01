@@ -2,6 +2,7 @@ package com.qbo.educate.common.service.impl;
 
 import com.qbo.educate.common.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;

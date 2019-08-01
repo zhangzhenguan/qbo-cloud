@@ -38,6 +38,7 @@ public class PermissionService {
     private ElementBiz elementBiz;
     @Autowired
     private UserAuthUtil userAuthUtil;
+
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
 

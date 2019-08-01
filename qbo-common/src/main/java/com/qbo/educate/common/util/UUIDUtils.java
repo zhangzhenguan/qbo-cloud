@@ -25,4 +25,8 @@ public class UUIDUtils {
         return shortBuffer.toString();
 
     }
+
+    public static void main(String[] args) {
+        System.out.println(generateShortUuid());
+    }
 }

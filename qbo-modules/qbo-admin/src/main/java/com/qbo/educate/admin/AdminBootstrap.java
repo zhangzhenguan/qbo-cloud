@@ -29,6 +29,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @MapperScan("com.qbo.educate.admin.mapper")
 @EnableSwagger2Doc
+@ComponentScan("com.qbo.educate.admin")
 public class AdminBootstrap {
     public static void main(String[] args) {
         new SpringApplicationBuilder(AdminBootstrap.class).run(args);    }

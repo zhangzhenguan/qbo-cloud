@@ -18,7 +18,6 @@ public class AdminCommonConstant {
      */
     public final static String RESOURCE_TYPE_MENU = "menu";
     public final static String RESOURCE_TYPE_BTN = "button";
-
     public final static String RESOURCE_REQUEST_METHOD_GET = "GET";
     public final static String RESOURCE_REQUEST_METHOD_PUT = "PUT";
     public final static String RESOURCE_REQUEST_METHOD_DELETE = "DELETE";

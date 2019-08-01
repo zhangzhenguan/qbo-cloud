@@ -39,6 +39,11 @@ public class UserRest {
         return permissionService.getPermissionByUsername(username);
     }
 
+    /**
+     * 登录用户校验
+     * @param body
+     * @return
+     */
     @RequestMapping(value = "/user/validate", method = RequestMethod.POST)
     public @ResponseBody UserInfo validate(@RequestBody Map<String,String> body){
         log.debug("body...{}....", JSON.toJSON(body));

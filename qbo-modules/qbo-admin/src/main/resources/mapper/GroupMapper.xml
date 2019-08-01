@@ -21,21 +21,16 @@
     <result column="upd_user" jdbcType="VARCHAR" property="updUser" />
     <result column="upd_name" jdbcType="VARCHAR" property="updName" />
     <result column="upd_host" jdbcType="VARCHAR" property="updHost" />
-    <result column="attr1" jdbcType="VARCHAR" property="attr1" />
-    <result column="attr2" jdbcType="VARCHAR" property="attr2" />
-    <result column="attr3" jdbcType="VARCHAR" property="attr3" />
-    <result column="attr4" jdbcType="VARCHAR" property="attr4" />
-    <result column="attr5" jdbcType="VARCHAR" property="attr5" />
-    <result column="attr6" jdbcType="VARCHAR" property="attr6" />
-    <result column="attr7" jdbcType="VARCHAR" property="attr7" />
-    <result column="attr8" jdbcType="VARCHAR" property="attr8" />
   </resultMap>
+
   <delete id="deleteGroupMembersById">
       delete from base_group_member where group_id = #{groupId}
   </delete>
+
   <delete id="deleteGroupLeadersById">
     delete from base_group_leader where group_id = #{groupId}
   </delete>
+
   <insert id="insertGroupMembersById">
     insert into base_group_member (
        group_id,user_id
@@ -44,6 +39,7 @@
        #{groupId},#{userId}
     )
   </insert>
+
   <insert id="insertGroupLeadersById">
     insert into base_group_leader (
        group_id,user_id
@@ -52,4 +48,5 @@
        #{groupId},#{userId}
     )
   </insert>
+
 </mapper>
